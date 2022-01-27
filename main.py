@@ -15,12 +15,12 @@ def search_goods():
 
 
     soup = Bs(content , _parser)
-    div = soup.find_all('h2')
-    price = soup.find_all('div')
+    div = soup.findAll('h2')
 
-    for i in price:
 
-        print(i.find('div', _class="list-no-v2-outter J-offer-wrapper").find('span'))
+    for i in div:
+        outPut = str(i.find('a').get("href"))
+        print(outPut.strip('//'))
 
 
 search_goods()
